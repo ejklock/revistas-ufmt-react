@@ -1,32 +1,40 @@
 import React from 'react';
-import { Nav, Brand } from './style';
+import { FaSearch, FaBars } from 'react-icons/fa';
+import { Nav } from './style';
 
+const handleNavToggle = e => {
+  console.log(e);
+};
 export default function NavBar(props) {
   const { brandText, brandImage } = props;
   if (brandImage) {
     return (
       <Nav>
-        <Brand>
+        <a id="brand">
           <img src={brandImage} alt="" />
           <h1>{brandText}</h1>
-        </Brand>
-        <ul className="main-nav" id="js-menu">
+        </a>
+        <ul id="main-nav">
           <li>
-            <a href="#" className="nav-links">
-              Buscar
-            </a>
+            <a href="#">Home</a>
           </li>
         </ul>
-
-        <input />
+        <button
+          type="button"
+          onClick={handleNavToggle}
+          className="navbar-toogle"
+        >
+          <FaBars />
+        </button>
       </Nav>
     );
   }
   return (
     <Nav>
-      <Brand>
+      <a id="brand">
+        <img src={brandImage} alt="" />
         <h1>{brandText}</h1>
-      </Brand>
+      </a>
     </Nav>
   );
 }
