@@ -1,32 +1,51 @@
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-  display: flex;
-  padding: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 30px;
 
-  button,
-  .navbar-toggle {
-    border: none;
-    background: none;
-    margin-left: 50px;
+  .brand-container {
     display: flex;
-    align-items: center;
-    font-size: 40px;
-    cursor: pointer;
-  }
-  ul,
-  #main-nav {
-    list-style: none;
-    display: none;
-    align-items: center;
+    justify-content: space-between;
+    button {
+      background: none;
+      border: none;
+      svg {
+        color: #28166f;
 
-    li {
-      text-align: center;
-      margin: 15px auto;
-      a {
-        text-decoration: none;
+        cursor: pointer;
+
+        font-size: 30px;
       }
+      svg:hover {
+        color: black;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    display: none;
+    flex-direction: column;
+    align-items: normal;
+    margin-top: 10px;
+    li {
+      margin-top: 20px;
+    }
+  }
+
+  form {
+    .search-box {
+      border: 1px solid #28166f;
+      font-family: 'Rubik';
+      font-style: italic;
+      height: 48px;
+      width: 100%;
+      width: -moz-available; /* WebKit-based browsers will ignore this. */
+      width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+      width: fill-available;
+      padding: 10px 15px;
+      border-radius: 4px;
+      font-size: 16px;
     }
   }
 
@@ -38,14 +57,10 @@ const Nav = styled.nav`
     color: #28166f;
   }
 
-  a,
-  #brand {
+  .brand {
+    text-decoration: none;
     display: flex;
-    align-content: center;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 0;
-
     img {
       width: 65px;
       height: 65px;
@@ -56,22 +71,40 @@ const Nav = styled.nav`
     }
   }
   @media screen and (min-width: 768px) {
-    svg,
-    .navbar-toggle {
-      display: none;
-    }
-    ul,
-    #main-nav {
+    display: flex;
+    justify-content: space-between;
+    .brand-container {
       display: flex;
-    }
-    a,
-    #brand {
-      img {
-        width: 122px;
-        height: 122px;
+      flex-direction: row;
+      .brand {
+        img {
+          width: 122px;
+          height: 122px;
+        }
+        h1 {
+          font-size: 40px;
+        }
       }
-      h1 {
-        font-size: 40px;
+
+      button {
+        svg {
+          display: none;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row-reverse;
+      flex-grow: 1;
+      align-items: center;
+
+      li {
+        padding-left: 15px;
+        .search-box {
+          min-width: 441px;
+        }
       }
     }
   }
