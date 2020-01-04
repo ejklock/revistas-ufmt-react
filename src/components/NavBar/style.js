@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const Nav = styled.nav`
-  padding: 30px;
+  padding: 20px;
 
+  border-bottom: 1px solid #28166f;
   .brand-container {
     display: flex;
     justify-content: space-between;
@@ -11,20 +12,20 @@ const Nav = styled.nav`
       border: none;
       svg {
         color: #28166f;
+        margin: 5px;
 
         cursor: pointer;
 
-        font-size: 30px;
-      }
-      svg:hover {
-        color: black;
+        font-size: 36px;
       }
     }
   }
 
   ul {
     list-style-type: none;
-    display: none;
+
+    display: ${props => (props.open ? 'flex' : 'none')};
+
     flex-direction: column;
     align-items: normal;
     margin-top: 10px;
@@ -37,12 +38,12 @@ const Nav = styled.nav`
     .search-box {
       border: 1px solid #28166f;
       font-family: 'Rubik';
+
       font-style: italic;
       height: 48px;
       width: 100%;
       width: -moz-available; /* WebKit-based browsers will ignore this. */
       width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
-      width: fill-available;
       padding: 10px 15px;
       border-radius: 4px;
       font-size: 16px;
@@ -72,17 +73,18 @@ const Nav = styled.nav`
   }
   @media screen and (min-width: 768px) {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     .brand-container {
       display: flex;
       flex-direction: row;
       .brand {
         img {
-          width: 122px;
-          height: 122px;
+          width: 120px;
+          height: 120px;
         }
         h1 {
-          font-size: 40px;
+          font-size: 30px;
         }
       }
 
@@ -96,7 +98,8 @@ const Nav = styled.nav`
     ul {
       list-style: none;
       display: flex;
-      flex-direction: row-reverse;
+      justify-content: flex-end;
+      flex-direction: row;
       flex-grow: 1;
       align-items: center;
 
