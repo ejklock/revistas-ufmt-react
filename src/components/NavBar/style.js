@@ -28,25 +28,41 @@ const Nav = styled.nav`
 
     flex-direction: column;
     align-items: normal;
-    margin-top: 10px;
     li {
       margin-top: 20px;
     }
   }
 
   form {
-    .search-box {
+    .search-container {
+      display: flex;
+      align-content: center;
+      align-items: center;
       border: 1px solid #28166f;
-      font-family: 'Rubik';
+      border-radius:4px;
 
-      font-style: italic;
-      height: 48px;
-      width: 100%;
-      width: -moz-available; /* WebKit-based browsers will ignore this. */
-      width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
-      padding: 10px 15px;
-      border-radius: 4px;
-      font-size: 16px;
+
+      .search-box {
+
+        border: 0;
+        font-family: 'Rubik';
+        border-radius: 5px;
+        font-style: italic;
+        height: 48px;
+
+        width: -moz-available; /* WebKit-based browsers will ignore this. */
+        width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+        padding: 10px 15px;
+        font-size: 16px;
+      }
+    }
+
+      svg {
+        position: relative;
+        font-size: 40px;
+        color: #28166f;
+        padding-right: 10px;
+      }
     }
   }
 

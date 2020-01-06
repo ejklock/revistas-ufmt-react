@@ -47,6 +47,7 @@ export default class NavBar extends Component {
                   className="search-box"
                   placeholder="Digite um termo de busca"
                 />
+                <FaSearch />
               </div>
             </form>
           </li>
