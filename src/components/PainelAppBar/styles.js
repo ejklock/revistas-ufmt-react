@@ -2,12 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   flex-grow: 1;
-  justify-content: space-between;
   header {
-    background-color: #28166f;
+    background: #28166f;
   }
-  h1 {
-    font-size: 20px;
-    font-family: 'Sans';
+  justify-content: space-between;
+  .menuButton {
+    margin-right: 16px;
+  }
+
+  h6 {
+    flex-grow: 1;
   }
 `;
