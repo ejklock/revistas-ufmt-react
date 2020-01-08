@@ -16,8 +16,7 @@ export function* login({ payload }) {
     yield put(loginSuccess(token, user));
     history.push('/dashboard');
   } catch (error) {
-    console.log('erro');
+    alert('erro');
   }
 }
-
-export default all(['@auth/LOGIN_REQUEST', login]);
+export default all([takeLatest('@auth/LOGIN_REQUEST', login)]);
