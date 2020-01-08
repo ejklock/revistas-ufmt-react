@@ -126,7 +126,6 @@ const Nav = styled.nav`
         }
       }
     }
-  }
 `;
 
 export { Nav };
