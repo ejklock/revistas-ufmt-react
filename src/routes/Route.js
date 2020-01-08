@@ -12,7 +12,7 @@ export default function RouteWraper({
 }) {
   const signed = false;
 
-  const { isHome } = rest;
+  const { isHome = false } = rest;
   if (!signed && isPrivate) {
     return <Redirect to="/login" />;
   }
