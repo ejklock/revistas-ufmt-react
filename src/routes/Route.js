@@ -4,24 +4,33 @@ import { Route, Redirect } from 'react-router-dom';
 import AuthLayout from '../pages/_layouts/auth';
 import DefaultLayout from '../pages/_layouts/default';
 import HomeLayout from '../pages/_layouts/home';
+import { store } from '../store';
+
+function getApropriatedLayout(signed, isHome) {
+  if (isHome) {
+    return HomeLayout;
+  }
+  return signed ? DefaultLayout : AuthLayout;
+}
 
 export default function RouteWraper({
   component: Component,
   isPrivate,
   ...rest
 }) {
-  const signed = false;
+  const { signed } = store.getState().auth;
 
   const { isHome = false } = rest;
-  if (!signed && isPrivate) {
+
+  if (!signed && isPrivate && !isHome) {
     return <Redirect to="/login" />;
   }
 
-  if (signed && !isPrivate) {
+  if (signed && !isPrivate && !isHome) {
     return <Redirect to="/dashboard" />;
   }
 
-  const Layout = !isHome ? (signed ? DefaultLayout : AuthLayout) : HomeLayout;
+  const Layout = getApropriatedLayout(signed, isHome);
 
   return (
     <Route
