@@ -20,7 +20,7 @@
     "react-scripts": "3.2.0",
     "react-toastify": "^5.4.1",
     "reactotron-react-js": "^3.3.6",
-    "reactotron-redux": "^3.1.1",
+    "reactotron-redux": "^3.1.2",
     "reactotron-redux-saga": "^4.2.3",
     "redux": "^4.0.4",
     "redux-persist": "^6.0.0",
