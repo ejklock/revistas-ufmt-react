@@ -33,7 +33,7 @@ export const Container = styled.div`
     footer {
       justify-content: center;
       p {
-        font-size: 22px;
+        font-size: 18px;
         line-height: 24px;
       }
 

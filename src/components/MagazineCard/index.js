@@ -2,13 +2,15 @@ import React from 'react';
 
 import { Container, CardImage, CardBody, CardTitle, Button } from './styles';
 
-export default function MagazineCard() {
+export default function MagazineCard({ title, url, image }) {
   return (
     <Container>
-      <CardImage />
+      <CardImage image={image} />
       <CardBody>
-        <CardTitle>ACENO - Revista de Antropologia do Centro-Oeste</CardTitle>
-        <Button>Acessar Revista</Button>
+        <CardTitle>{title}</CardTitle>
+        <Button title={`Acessar a revista: ${title}`} href={url}>
+          Acessar Revista
+        </Button>
       </CardBody>
     </Container>
   );

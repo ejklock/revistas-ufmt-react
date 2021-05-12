@@ -10,8 +10,7 @@ export const Container = styled.section`
 
   p {
     font-family: 'Rubik';
-    font-size: 12px;
-    line-height: 19px;
+    font-size: calc(18px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
   }
 
   @media screen and (min-width: 768px) {
@@ -26,7 +25,7 @@ export const Container = styled.section`
     p {
       font-family: 'Rubik';
       font-size: 25px;
-      padding: 40px;
+      font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
       line-height: 40px;
     }
   }
@@ -40,9 +39,8 @@ export const SectionIcon = styled.div`
 
   h1 {
     font-family: 'Rubik';
-    font-size: 17px;
+    font-size: 20px;
     color: #28166f;
-    width: 200px;
     line-height: 13px;
     font-weight: bold;
   }
@@ -57,7 +55,7 @@ export const SectionIcon = styled.div`
   @media screen and (min-width: 768px) {
     h1 {
       font-family: 'Rubik';
-      font-size: 52px;
+      font-size: 40px;
       color: #28166f;
       width: 442px;
       line-height: 42px;

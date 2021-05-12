@@ -96,11 +96,11 @@ const Nav = styled.nav`
       flex-direction: row;
       .brand {
         img {
-          width: 120px;
-          height: 120px;
+          width: 90px;
+          height: 90px;
         }
         h1 {
-          font-size: 30px;
+          font-size: 28px;
         }
       }
 
